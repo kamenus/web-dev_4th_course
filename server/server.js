@@ -1,4 +1,5 @@
 const express = require('express'),
+  expressOasGenerator = require('express-oas-generator'),
   app = express(),
   port = process.env.PORT || 3001,
   dbPath = 'mongodb://localhost:27017/ShopDB',
@@ -19,6 +20,12 @@ const productRoutes = require('./api/routes/productRoutes')
 
 cartRoutes(app)
 productRoutes(app)
+
+expressOasGenerator.init(
+  app,
+  function(spec) { return spec; },
+  `${process.cwd()}/spec/spec-api.json`
+  )
 
 app.listen(port)
 

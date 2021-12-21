@@ -5,7 +5,7 @@ import { HeaderMain, HeaderContainer, HeaderButton } from './Header.styles'
 import { HeaderMenu } from 'components/HeaderMenu'
 import { Search } from 'components/Search'
 
-import { MENU_ITEMS } from 'constants/index'
+import { MENU_ITEMS } from '../../constants'
 import { paths } from 'navigation/CONSTANTS'
 
 const Header = () => {
